@@ -67,12 +67,14 @@ class ViewController: UIViewController {
         // ----
 
         view.backgroundColor = UIColor.white
+        
+        let scale = UIScreen.main.scale
 
         let numParticles = ParticleCount.twoMillion
 
         if view.frame.height < view.frame.width {
-            particleLab = ParticleLab(width: UInt(view.frame.width),
-                height: UInt(view.frame.height),
+            particleLab = ParticleLab(width: UInt(view.frame.width * scale),
+                height: UInt(view.frame.height * scale),
                 numParticles: numParticles)
 
             particleLab.frame = CGRect(x: 0,
@@ -80,8 +82,8 @@ class ViewController: UIViewController {
                 width: view.frame.width,
                 height: view.frame.height)
         } else {
-            particleLab = ParticleLab(width: UInt(view.frame.height),
-                height: UInt(view.frame.width),
+            particleLab = ParticleLab(width: UInt(view.frame.height * scale),
+                height: UInt(view.frame.width * scale),
                 numParticles: numParticles)
 
             particleLab.frame = CGRect(x: 0,

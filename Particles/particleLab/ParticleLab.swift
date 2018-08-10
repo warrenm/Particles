@@ -103,6 +103,7 @@ class ParticleLab: MTKView {
                    device:  MTLCreateSystemDefaultDevice())
 
         framebufferOnly = false
+        autoResizeDrawable = false
         drawableSize = CGSize(width: CGFloat(imageWidth), height: CGFloat(imageHeight))
 
         setUpParticles()
