@@ -103,6 +103,7 @@ class ParticleLab: MTKView {
                    device:  MTLCreateSystemDefaultDevice())
 
         framebufferOnly = false
+        autoResizeDrawable = false
         drawableSize = CGSize(width: CGFloat(imageWidth), height: CGFloat(imageHeight))
 
         setUpParticles()
@@ -202,7 +203,7 @@ class ParticleLab: MTKView {
             return
         }
 
-        defaultLibrary = device.newDefaultLibrary()
+        defaultLibrary = device.makeDefaultLibrary()
         commandQueue = device.makeCommandQueue()
 
         kernelFunction = defaultLibrary.makeFunction(name: "particleRendererShader")
@@ -251,8 +252,10 @@ class ParticleLab: MTKView {
             frameNumber = 0
         }
 
-        let commandBuffer = commandQueue.makeCommandBuffer()
-        let commandEncoder = commandBuffer.makeComputeCommandEncoder()
+        guard let commandBuffer = commandQueue.makeCommandBuffer(),
+            let commandEncoder = commandBuffer.makeComputeCommandEncoder() else {
+            return
+        }
 
         commandEncoder.setComputePipelineState(pipelineState)
 
@@ -260,31 +263,31 @@ class ParticleLab: MTKView {
                                                       length: Int(particlesMemoryByteSize),
             options: MTLResourceOptions(), deallocator: nil)
 
-        commandEncoder.setBuffer(particlesBufferNoCopy, offset: 0, at: 0)
-        commandEncoder.setBuffer(particlesBufferNoCopy, offset: 0, at: 1)
+        commandEncoder.setBuffer(particlesBufferNoCopy, offset: 0, index: 0)
+        commandEncoder.setBuffer(particlesBufferNoCopy, offset: 0, index: 1)
 
         let inGravityWell = device.makeBuffer(bytes: &gravityWellParticle,
                                               length: particleSize,
                                               options: MTLResourceOptions())
-        commandEncoder.setBuffer(inGravityWell, offset: 0, at: 2)
+        commandEncoder.setBuffer(inGravityWell, offset: 0, index: 2)
 
         let colorBuffer = device.makeBuffer(bytes: &particleColor,
                                             length: MemoryLayout<ParticleColor>.size,
                                             options: MTLResourceOptions())
-        commandEncoder.setBuffer(colorBuffer, offset: 0, at: 3)
+        commandEncoder.setBuffer(colorBuffer, offset: 0, index: 3)
 
-        commandEncoder.setBuffer(imageWidthFloatBuffer, offset: 0, at: 4)
-        commandEncoder.setBuffer(imageHeightFloatBuffer, offset: 0, at: 5)
+        commandEncoder.setBuffer(imageWidthFloatBuffer, offset: 0, index: 4)
+        commandEncoder.setBuffer(imageHeightFloatBuffer, offset: 0, index: 5)
 
         let dragFactorBuffer = device.makeBuffer(bytes: &dragFactor,
                                                  length: MemoryLayout<Float>.size,
                                                  options: MTLResourceOptions())
-        commandEncoder.setBuffer(dragFactorBuffer, offset: 0, at: 6)
+        commandEncoder.setBuffer(dragFactorBuffer, offset: 0, index: 6)
 
         let respawnOutOfBoundsParticlesBuffer = device.makeBuffer(bytes: &respawnOutOfBoundsParticles,
                                                                   length: MemoryLayout<Bool>.size,
                                                                   options: MTLResourceOptions())
-        commandEncoder.setBuffer(respawnOutOfBoundsParticlesBuffer, offset: 0, at: 7)
+        commandEncoder.setBuffer(respawnOutOfBoundsParticlesBuffer, offset: 0, index: 7)
 
         guard let drawable = currentDrawable else {
             commandEncoder.endEncoding()
@@ -298,7 +301,7 @@ class ParticleLab: MTKView {
                 bytesPerRow: Int(bytesPerRow))
         }
 
-        commandEncoder.setTexture(drawable.texture, at: 0)
+        commandEncoder.setTexture(drawable.texture, index: 0)
 
         commandEncoder.dispatchThreadgroups(threadgroupsPerGrid, threadsPerThreadgroup: threadsPerThreadgroup)
 

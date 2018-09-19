@@ -28,6 +28,9 @@ xcuserdata/
 *.dSYM.zip
 *.dSYM
 
+## Miscellaneous cruft
+.DS_Store
+
 ## Playgrounds
 timeline.xctimeline
 playground.xcworkspace
