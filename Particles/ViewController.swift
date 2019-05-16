@@ -56,9 +56,9 @@ class ViewController: UIViewController {
             let hiMax = fftData[count / 2 ... count - 1].max() ?? 0
             let hiMin = fftData[count / 2 ... count - 1].min() ?? 0
 
-            let lowMaxIndex = fftData.index(of: lowMax) ?? 0
-            let hiMaxIndex = fftData.index(of: hiMax) ?? 0
-            let hiMinIndex = fftData.index(of: hiMin) ?? 0
+            let lowMaxIndex = fftData.firstIndex(of: lowMax) ?? 0
+            let hiMaxIndex = fftData.firstIndex(of: hiMax) ?? 0
+            let hiMinIndex = fftData.firstIndex(of: hiMin) ?? 0
 
             self.amplitude = Float(self.amplitudeTracker.amplitude * 25)
 
