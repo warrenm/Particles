@@ -24,7 +24,7 @@ open class Loop {
         internalHandler = handler
         let displayLink = CADisplayLink(target: self, selector: #selector(update))
         displayLink.preferredFramesPerSecond = 60
-        displayLink.add(to: RunLoop.current, forMode: RunLoopMode.commonModes)
+        displayLink.add(to: RunLoop.current, forMode: .common)
     }
 
     /// Repeat this loop at a given frequency with a code block
@@ -37,7 +37,7 @@ open class Loop {
         internalHandler = handler
         let displayLink = CADisplayLink(target: self, selector: #selector(update))
         displayLink.preferredFramesPerSecond = 60
-        displayLink.add(to: RunLoop.current, forMode: RunLoopMode.commonModes)
+        displayLink.add(to: RunLoop.current, forMode: .common)
     }
 
     /// Callback function for CADisplayLink

@@ -14,8 +14,8 @@
 		3E51059D1C310A4100CEC622 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E51059B1C310A4100CEC622 /* LaunchScreen.storyboard */; };
 		3E5105B61C310BFC00CEC622 /* Particles.metal in Sources */ = {isa = PBXBuildFile; fileRef = 3E5105B51C310BFC00CEC622 /* Particles.metal */; };
 		3E5105B81C310C4200CEC622 /* ParticleLab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5105B71C310C4200CEC622 /* ParticleLab.swift */; };
+		923F19FBC868E6D11FDF8BCA /* Pods_Particles.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1072B115BCB4A676318F7EEE /* Pods_Particles.framework */; };
 		C4D88CFA1C6AD6C9005BB6CE /* Loop.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D88CF91C6AD6C9005BB6CE /* Loop.swift */; };
-		EB01F7C340708FC1F948615C /* Pods_Particles.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FB844010A0240A1787102AB /* Pods_Particles.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,8 +32,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0FB844010A0240A1787102AB /* Pods_Particles.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Particles.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1BB3FFE065A7B4BEAADFEBAB /* Pods-Particles.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Particles.release.xcconfig"; path = "Pods/Target Support Files/Pods-Particles/Pods-Particles.release.xcconfig"; sourceTree = "<group>"; };
+		1072B115BCB4A676318F7EEE /* Pods_Particles.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Particles.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E51058F1C310A4100CEC622 /* Particles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Particles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E5105921C310A4100CEC622 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E5105941C310A4100CEC622 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,8 +42,9 @@
 		3E51059E1C310A4100CEC622 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E5105B51C310BFC00CEC622 /* Particles.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; name = Particles.metal; path = particleLab/Particles.metal; sourceTree = "<group>"; };
 		3E5105B71C310C4200CEC622 /* ParticleLab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParticleLab.swift; path = particleLab/ParticleLab.swift; sourceTree = "<group>"; };
+		48F6BBF01A67157652C21AC0 /* Pods-Particles.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Particles.release.xcconfig"; path = "Target Support Files/Pods-Particles/Pods-Particles.release.xcconfig"; sourceTree = "<group>"; };
 		C4D88CF91C6AD6C9005BB6CE /* Loop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loop.swift; sourceTree = "<group>"; };
-		EF829C0E631E7C2906DD36D2 /* Pods-Particles.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Particles.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Particles/Pods-Particles.debug.xcconfig"; sourceTree = "<group>"; };
+		EFE6634B2B6F26F45E47286D /* Pods-Particles.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Particles.debug.xcconfig"; path = "Target Support Files/Pods-Particles/Pods-Particles.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,20 +52,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB01F7C340708FC1F948615C /* Pods_Particles.framework in Frameworks */,
+				923F19FBC868E6D11FDF8BCA /* Pods_Particles.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0FAE0DBE43F0459AA3C0BE78 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1072B115BCB4A676318F7EEE /* Pods_Particles.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3E5105861C310A4100CEC622 = {
 			isa = PBXGroup;
 			children = (
 				3E5105911C310A4100CEC622 /* Particles */,
-				EA127F371C41FFD000289567 /* Frameworks */,
 				3E5105901C310A4100CEC622 /* Products */,
-				D9187E49A9A396286C312090 /* Pods */,
+				A0FF45BE2998B9DDC514B71E /* Pods */,
+				0FAE0DBE43F0459AA3C0BE78 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,22 +109,13 @@
 			name = particleLab;
 			sourceTree = "<group>";
 		};
-		D9187E49A9A396286C312090 /* Pods */ = {
+		A0FF45BE2998B9DDC514B71E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				EF829C0E631E7C2906DD36D2 /* Pods-Particles.debug.xcconfig */,
-				1BB3FFE065A7B4BEAADFEBAB /* Pods-Particles.release.xcconfig */,
+				EFE6634B2B6F26F45E47286D /* Pods-Particles.debug.xcconfig */,
+				48F6BBF01A67157652C21AC0 /* Pods-Particles.release.xcconfig */,
 			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		EA127F371C41FFD000289567 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				0FB844010A0240A1787102AB /* Pods_Particles.framework */,
-			);
-			name = Frameworks;
-			path = AudioKitParticles;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +125,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E5105A11C310A4100CEC622 /* Build configuration list for PBXNativeTarget "Particles" */;
 			buildPhases = (
-				2997F1F00E787BD67B071FB7 /* [CP] Check Pods Manifest.lock */,
+				9067488E11F6936B5AB095F7 /* [CP] Check Pods Manifest.lock */,
 				3E51058B1C310A4100CEC622 /* Sources */,
 				3E51058C1C310A4100CEC622 /* Frameworks */,
 				3E51058D1C310A4100CEC622 /* Resources */,
@@ -153,7 +152,7 @@
 				TargetAttributes = {
 					3E51058E1C310A4100CEC622 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = W22K9JG3J6;
+						DevelopmentTeam = FPL5896D45;
 						LastSwiftMigration = 0940;
 						ProvisioningStyle = Automatic;
 					};
@@ -191,16 +190,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2997F1F00E787BD67B071FB7 /* [CP] Check Pods Manifest.lock */ = {
+		9067488E11F6936B5AB095F7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Particles-checkManifestLockResult.txt",
 			);
@@ -292,11 +295,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
@@ -342,10 +346,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
@@ -354,40 +359,40 @@
 		};
 		3E5105A21C310A4100CEC622 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EF829C0E631E7C2906DD36D2 /* Pods-Particles.debug.xcconfig */;
+			baseConfigurationReference = EFE6634B2B6F26F45E47286D /* Pods-Particles.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = W22K9JG3J6;
+				DEVELOPMENT_TEAM = FPL5896D45;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Particles/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = io.audiokit.Particles;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		3E5105A31C310A4100CEC622 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1BB3FFE065A7B4BEAADFEBAB /* Pods-Particles.release.xcconfig */;
+			baseConfigurationReference = 48F6BBF01A67157652C21AC0 /* Pods-Particles.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = W22K9JG3J6;
+				DEVELOPMENT_TEAM = FPL5896D45;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Particles/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = io.audiokit.Particles;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
