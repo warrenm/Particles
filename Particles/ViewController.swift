@@ -28,7 +28,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let mic = AKMicrophone()
+        guard let mic = AKMicrophone() else {
+            AKLog("Could not create AudioKit microphone!")
+            return
+        }
 
         fft = AKFFTTap(mic)
 
@@ -40,7 +43,7 @@ class ViewController: UIViewController {
 
         AudioKit.output = noAudioOutput
         do {
-            try AudioKit.start()         
+            try AudioKit.start()
         } catch {
             AKLog("AudioKit did not start!")
         }

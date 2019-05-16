@@ -10,5 +10,5 @@ target 'Particles' do
   use_frameworks!
 
   # Pods for Particles
-  pod 'AudioKit', '~> 4.6.1'
+  pod 'AudioKit', '~> 4.7.2'
 end
